@@ -1,0 +1,6 @@
+openai
+httpx
+duckduckgo-search
+python-dotenv
+beautifulsoup4
+html2text
