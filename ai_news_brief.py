@@ -27,7 +27,7 @@ load_dotenv(Path(__file__).parent / ".env")
 LLM_API_KEY = os.environ["LLM_GW_API_KEY"]
 LLM_BASE_URL = os.environ.get(
     "LLM_GW_BASE_URL",
-    "https://eng-ai-model-gateway.sfproxy.devx-preprod.aws-esvc1-useast2.aws.sfdc.cl/v1",
+    "https://api.anthropic.com/v1",
 )
 LLM_MODEL = os.environ.get("LLM_GW_MODEL", "claude-sonnet-4-6")
 
@@ -251,7 +251,7 @@ def _llm_client() -> OpenAI:
     return OpenAI(
         api_key=LLM_API_KEY,
         base_url=LLM_BASE_URL,
-        http_client=httpx.Client(verify=False),
+        http_client=httpx.Client(),
     )
 
 
